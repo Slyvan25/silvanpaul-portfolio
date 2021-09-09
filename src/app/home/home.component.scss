@@ -1,0 +1,54 @@
+.gradient-background{
+    // background-image: url('../../assets/blurry-gradient.svg');
+    background: rgb(209,37,230);
+    background: linear-gradient(126deg, rgba(209,37,230,1) 0%, rgba(37,73,230,1) 50%, rgba(209,37,230,1) 100%);
+    // background: radial-gradient(circle, rgba(37,73,230,1) 0%, rgba(83,63,230,1) 50%, rgba(209,37,230,1) 100%);
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 5;
+}
+
+// .gradient-text {
+//     /* Fallback: Set a background color. */
+//     background-color: red;
+    
+//     /* Create the gradient. */
+//     background-image: linear-gradient(45deg, #7884f3, #af4261);
+    
+//     /* Set the background size and repeat properties. */
+//     background-size: 100%;
+//     background-repeat: repeat;
+  
+//     /* Use the text as a mask for the background. */
+//     /* This will show the gradient as a text color rather than element bg. */
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent; 
+//     -moz-background-clip: text;
+//     -moz-text-fill-color: transparent;
+
+//   }
+
+
+.big-hero{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    align-items: center;
+    height: calc(100vh - 90px);
+    text-transform: uppercase;
+}
+
+
+h1 {
+    font-size: 94px;
+    background: -webkit-linear-gradient(#fff, #fff, #2549E6,);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 40px;
+    font-weight: 100;
+  }
