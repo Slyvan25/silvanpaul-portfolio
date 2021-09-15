@@ -1,14 +1,16 @@
 nav{
     display: flex;
     width: 100vw;
+    height: 90px;
     justify-content: center;
-    padding-top: 37px;
+    align-items: flex-end;
 
     ul{
         display: flex;
-        width: 50%;
+        padding: 0 20%;
         justify-content: space-between;
         list-style: none;
+        flex: 1;
     }
     a{
         color: #fff;

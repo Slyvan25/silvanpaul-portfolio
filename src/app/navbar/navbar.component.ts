@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavItem } from '../Interfaces/NavItem'
+import { NavitemService } from '../navitem.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  NavItems : NavItem[] = [];
+
+  constructor(private navItemService: NavitemService) {
+
+  }
 
   ngOnInit(): void {
+    this.navItemService.getNavItems().subscribe(navitem => (this.NavItems = navitem))
+    console.log(this.NavItems)
   }
 
 }
