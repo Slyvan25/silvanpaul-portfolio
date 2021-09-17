@@ -6,3 +6,32 @@ body {
     padding: 0;
     background-color: aqua;
 }
+
+.content > :last-child{
+    height: calc(100vh - 90px);
+}
+
+.gradient-background{
+    background: rgba(37,73,230,1);
+    background: linear-gradient(126deg, rgba(209,37,230,1) 0%, rgba(37,73,230,1) 50%, rgba(209,37,230,1) 100%);
+    animation: gradient 15s ease infinite;
+    background-repeat: no-repeat;
+  	background-size: 400% 400%;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 5;
+}
+
+//   animations
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

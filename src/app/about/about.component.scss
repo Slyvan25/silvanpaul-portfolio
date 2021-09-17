@@ -1,0 +1,22 @@
+.about-grid {
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    height: calc(100vh - 90px);
+    color: #fff;
+}
+
+.about {
+    flex: 3;
+    padding: 10rem;
+}
+
+.illustration {
+    flex: 2;
+    
+    img {
+        width: 30vw;
+        position: absolute;
+        bottom: 0;
+    }
+}

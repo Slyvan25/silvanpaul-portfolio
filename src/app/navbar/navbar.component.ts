@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { NavItem } from '../Interfaces/NavItem'
 import { NavitemService } from '../navitem.service';
 
@@ -10,14 +11,24 @@ import { NavitemService } from '../navitem.service';
 export class NavbarComponent implements OnInit {
 
   NavItems : NavItem[] = [];
+  CurrentRoute : String = "";
 
-  constructor(private navItemService: NavitemService) {
-
-  }
+  constructor(
+    private navItemService: NavitemService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
+      activatedRoute.url.subscribe((url: UrlSegment[])=> (this.CurrentRoute = url[0].path))
+    }
 
   ngOnInit(): void {
-    this.navItemService.getNavItems().subscribe(navitem => (this.NavItems = navitem))
-    console.log(this.NavItems)
+    this.navItemService.getNavItems().subscribe(navitem => {
+      this.NavItems = navitem
+    })
+  }
+
+  clickedRoute(currentItem: String): void {
+    console.log(currentItem);
+    this.CurrentRoute = currentItem;
   }
 
 }
