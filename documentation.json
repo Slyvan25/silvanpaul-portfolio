@@ -1,0 +1,1468 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "NavItem",
+            "id": "interface-NavItem-8efce8d154a68b94c8f99c585e092814",
+            "file": "src/app/Interfaces/NavItem.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface NavItem {\n    id: Number;\n    name: String;\n    hidden: Boolean;\n    disabled: Boolean;\n    reference: String;\n}\n",
+            "properties": [
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "hidden",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "String",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "reference",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "String",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 164,
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "NavitemService",
+            "id": "injectable-NavitemService-aa2b3ffca8605215ae412cfce4cccec1",
+            "file": "src/app/navitem.service.ts",
+            "properties": [
+                {
+                    "name": "uri",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "getNavItems",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<NavItem[]>",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport {HttpClient, HttpHeaders} from '@angular/common/http'\nimport { environment } from './../environments/environment';\nimport { Observable } from 'rxjs';\nimport { NavItem } from './Interfaces/NavItem';\n\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class NavitemService {\n  private uri = ''\n  constructor(private http:HttpClient) {\n    this.uri = `${environment.API_URL}/navitems`\n   }\n\n   getNavItems(): Observable<NavItem[]> {\n     return this.http.get<NavItem[]>(this.uri)\n   }\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AboutComponent",
+            "id": "component-AboutComponent-419d2ccd9147b188afb8d0d9a75e227c",
+            "file": "src/app/about/about.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-about",
+            "styleUrls": [
+                "./about.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./about.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.scss']\n})\nexport class AboutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".about-grid {\n    display: flex;\n    flex-direction: row;\n    height: inherit;\n    height: calc(100vh - 90px);\n    color: #fff;\n}\n\n.about {\n    flex: 3;\n    padding: 10rem;\n}\n\n.illustration {\n    flex: 2;\n    \n    img {\n        width: 30vw;\n        position: absolute;\n        bottom: 0;\n    }\n}",
+                    "styleUrl": "./about.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"about-grid\">\n    <div class=\"about\">\n        <h1><u>WH</u>O AM I?</h1>\n        <p>\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque veniam eaque deserunt est, qui doloribus quod ipsa debitis laboriosam ad. Quo corrupti odit consectetur alias maxime necessitatibus fuga eos repellat!\n        </p>\n    </div>\n    <div class=\"illustration\">\n        <img src=\"assets/vapor_car.png\" alt=\"\">\n    </div>\n</div>"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-cbca3170afce97f3bdaf91ecfba20e93",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'Silvan Paul - App and web developer'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'Silvan Paul - App and web developer';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');\n\nbody {\n    font-family: 'Ubuntu', sans-serif;\n    margin: 0;\n    padding: 0;\n    background-color: aqua;\n}\n\n.content > :last-child{\n    height: calc(100vh - 90px);\n}\n\n.gradient-background{\n    background: rgba(37,73,230,1);\n    background: linear-gradient(126deg, rgba(209,37,230,1) 0%, rgba(37,73,230,1) 50%, rgba(209,37,230,1) 100%);\n    animation: gradient 15s ease infinite;\n    background-repeat: no-repeat;\n  \tbackground-size: 400% 400%;\n    width: 100vw;\n    height: 100vh;\n    position: relative;\n    z-index: 5;\n}\n\n//   animations\n@keyframes gradient {\n\t0% {\n\t\tbackground-position: 0% 50%;\n\t}\n\t50% {\n\t\tbackground-position: 100% 50%;\n\t}\n\t100% {\n\t\tbackground-position: 0% 50%;\n\t}\n}\n",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"content\">\n    <app-navbar></app-navbar>\n\n    <router-outlet></router-outlet>\n</div>\n\n<div class=\"background\">\n    <div class=\"overlay\"></div>\n    <div class=\"gradient-background\">\n    </div>\n</div>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "What background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 26,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 711,
+                            "end": 724,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 322,
+                            "tagName": {
+                                "pos": 712,
+                                "end": 720,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "Button contents",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 40,
+                    "type": "string"
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 20,
+                    "type": "boolean"
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "How large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 32,
+                    "type": "\"small\" | \"medium\" | \"large\""
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 46,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 48
+                    }
+                }
+            }
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-246e2a69dc126a3bd76c6328dd3b93e2",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 53,
+                    "type": ""
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 62,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 56,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 59,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-0368ba31f32dcbd90cb54a0bd661b89c",
+            "file": "src/app/home/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [
+                "./home.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss']\n})\nexport class HomeComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".big-hero{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    height: calc(100vh - 90px);\n    text-transform: uppercase;\n    flex-direction: column;\n\n    div {\n      display: flex;\n      gap: 7.5rem;\n\n      a {\n        fa-icon {\n          font-size: 4rem;\n          color: rgba(255, 255, 255, .75);\n          transition: color .25s;\n        }\n      }\n\n      a:hover{\n        fa-icon {\n          font-size: 4rem;\n          color: rgba(255, 255, 255, 1);\n        }\n      }\n    }\n}\n\n\nh1 {\n    font-size: 5.875rem;\n    background: -webkit-linear-gradient(#fff, #fff, rgba(37, 73, 230, 0),);\n    -webkit-background-clip: text;\n    -webkit-text-fill-color: transparent;\n    background-clip: text;\n    letter-spacing: 2.5rem;\n    font-weight: 100;\n  }",
+                    "styleUrl": "./home.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "    <!-- hero -->\n    <div class=\"big-hero\">\n        <h1 class=\"gradient-text\">Silvan Paul</h1>\n        <div>\n            <a href=\"https://open.spotify.com/artist/1IGC1XkAcMKjvos46mbJ06?si=7m1XVwnLTS-b88RoyQ-tIA&dl_branch=1\" target=\"_blank\" rel=\"noopener noreferrer\"><fa-icon [icon]=\"['fab','spotify']\"></fa-icon></a>\n            <a href=\"https://soundcloud.com/dj-slyvan\" target=\"_blank\" rel=\"noopener noreferrer\"><fa-icon [icon]=\"['fab','soundcloud']\"></fa-icon></a>\n            <a href=\"https://bitbucket.org/Slyvan25/\" target=\"_blank\" rel=\"noopener noreferrer\"><fa-icon [icon]=\"['fab','bitbucket']\"></fa-icon></a>\n            <a href=\"https://github.com/Slyvan25\" target=\"_blank\" rel=\"noopener noreferrer\"><fa-icon [icon]=\"['fab','github']\"></fa-icon></a>\n            <a href=\"https://www.twitch.tv/slyvan\" target=\"_blank\" rel=\"noopener noreferrer\"><fa-icon [icon]=\"['fab','twitch']\"></fa-icon></a>\n            <a href=\"https://www.linkedin.com/in/silvan-paul-b7091283/\" target=\"_blank\" rel=\"noopener noreferrer\"><fa-icon [icon]=\"['fab','linkedin']\"></fa-icon></a>\n        </div>\n    </div>\n"
+        },
+        {
+            "name": "NavbarComponent",
+            "id": "component-NavbarComponent-e887b651f5257f94d442c8f53e387416",
+            "file": "src/app/navbar/navbar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-navbar",
+            "styleUrls": [
+                "./navbar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./navbar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "CurrentRoute",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "String",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "NavItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NavItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "clickedRoute",
+                    "args": [
+                        {
+                            "name": "currentItem",
+                            "type": "String",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "currentItem",
+                            "type": "String",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { ActivatedRoute, Router, UrlSegment } from '@angular/router';\nimport { NavItem } from '../Interfaces/NavItem'\nimport { NavitemService } from '../navitem.service';\n\n@Component({\n  selector: 'app-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss']\n})\nexport class NavbarComponent implements OnInit {\n\n  NavItems : NavItem[] = [];\n  CurrentRoute : String = \"\";\n\n  constructor(\n    private navItemService: NavitemService,\n    private router: Router,\n    private activatedRoute: ActivatedRoute) {\n      activatedRoute.url.subscribe((url: UrlSegment[])=> (this.CurrentRoute = url[0].path))\n    }\n\n  ngOnInit(): void {\n    this.navItemService.getNavItems().subscribe(navitem => {\n      this.NavItems = navitem\n    })\n  }\n\n  clickedRoute(currentItem: String): void {\n    console.log(currentItem);\n    this.CurrentRoute = currentItem;\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "nav{\n    display: flex;\n    width: 100vw;\n    height: 90px;\n    justify-content: center;\n    align-items: flex-end;\n\n    ul{\n        display: flex;\n        padding: 0 20%;\n        justify-content: space-between;\n        list-style: none;\n        flex: 1;\n    }\n    a{\n        color: #fff;\n        font-size: 18px;\n        text-decoration: none;\n        letter-spacing: 5px;\n\n        &.active {\n            border: solid 2px #fff;\n            border-radius: 50px;\n            padding: 9px 20px;\n            text-align: center;\n        }\n    }\n}",
+                    "styleUrl": "./navbar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "navItemService",
+                        "type": "NavitemService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "activatedRoute",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "navItemService",
+                        "type": "NavitemService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "activatedRoute",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<!-- refactor when backend is done -->\n<nav>\n    <ul>\n        <li *ngFor=\"let item of NavItems\"><a (click)=\"clickedRoute(item.name)\" [ngClass]=\"{'active': CurrentRoute === item.name}\" routerLink=\"{{item.reference}}\" >{{item.name}}</a></li>\n    </ul>\n</nav>"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-8f196770333aa216860a88c0b6b221aa",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 64,
+                    "type": ""
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 73,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 67,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 70,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\n//   <article>\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\n\n// );\n// Page.propTypes = {\n//   user: PropTypes.shape({}),\n//   onLogin: PropTypes.func.isRequired,\n//   onLogout: PropTypes.func.isRequired,\n//   onCreateAccount: PropTypes.func.isRequired,\n// };\n\n// Page.defaultProps = {\n//   user: null,\n// };\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nh2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\np {\n  margin: 1em 0;\n}\n\na {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nli {\n  margin-bottom: 8px;\n}\n\n.tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": ""
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-76e3ce3bdf6a673a2c1981ce1bdbb837",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport {HttpClientModule} from '@angular/common/http'\n\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { ServiceWorkerModule } from '@angular/service-worker';\nimport { environment } from '../environments/environment';\nimport { HomeComponent } from './home/home.component';\nimport { NavbarComponent } from './navbar/navbar.component';\nimport { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';\n\nimport { fas } from '@fortawesome/free-solid-svg-icons';\nimport { far } from '@fortawesome/free-regular-svg-icons';\nimport { fab } from '@fortawesome/free-brands-svg-icons';\nimport { AboutComponent } from './about/about.component'\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    HomeComponent,\n    NavbarComponent,\n    AboutComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    ServiceWorkerModule.register('ngsw-worker.js', {\n      enabled: environment.production,\n      // Register the ServiceWorker as soon as the app is stable\n      // or after 30 seconds (whichever comes first).\n      registrationStrategy: 'registerWhenStable:30000'\n    }),\n    FontAwesomeModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { \n  constructor(library: FaIconLibrary) {\n    library.addIconPacks(fas, far, fab);\n  }\n}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AboutComponent"
+                        },
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "HomeComponent"
+                        },
+                        {
+                            "name": "NavbarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-f79ed6ffc18de44b6bc6e5a2fee0f4d0",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { HomeComponent } from './home/home.component';\nimport { AboutComponent } from './about/about.component';\n\nimport { AppComponent } from './app.component';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\n\n\nconst routes: Routes = [\n  { path: '', redirectTo: '/home', pathMatch: 'full' },\n  { path: 'home', component: HomeComponent },\n  { path: 'about', component: AboutComponent },\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes), FontAwesomeModule],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "configureTests",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "test-config.helper.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "(configure: ConfigureFn, compilerOptions: CompilerOptions = {}) => {\n  const compilerConfig: CompilerOptions = {\n    preserveWhitespaces: false,\n    ...compilerOptions,\n  };\n\n  const configuredTestBed = TestBed.configureCompiler(compilerConfig);\n\n  configure(configuredTestBed);\n\n  return configuredTestBed.compileComponents().then(() => configuredTestBed);\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true,\n  API_URL: \"api.silvanpaul.com/portfolio/\"\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false,\n  API_URL: \"http://localhost:3000\"\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "mock",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "setup-jest.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "() => {\n  let storage: { [key: string]: string } = {};\n  return {\n    getItem: (key: string) => (key in storage ? storage[key] : null),\n    setItem: (key: string, value: string) => (storage[key] = value || ''),\n    removeItem: (key: string) => delete storage[key],\n    clear: () => (storage = {}),\n  };\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "CompilerOptions",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "Partial<literal type>",
+                "file": "test-config.helper.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 176
+            },
+            {
+                "name": "ConfigureFn",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "function",
+                "file": "test-config.helper.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 177
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "test-config.helper.ts": [
+                {
+                    "name": "configureTests",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "test-config.helper.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "(configure: ConfigureFn, compilerOptions: CompilerOptions = {}) => {\n  const compilerConfig: CompilerOptions = {\n    preserveWhitespaces: false,\n    ...compilerOptions,\n  };\n\n  const configuredTestBed = TestBed.configureCompiler(compilerConfig);\n\n  configure(configuredTestBed);\n\n  return configuredTestBed.compileComponents().then(() => configuredTestBed);\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true,\n  API_URL: \"api.silvanpaul.com/portfolio/\"\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false,\n  API_URL: \"http://localhost:3000\"\n}"
+                }
+            ],
+            "src/stories/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                }
+            ],
+            "setup-jest.ts": [
+                {
+                    "name": "mock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "setup-jest.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => {\n  let storage: { [key: string]: string } = {};\n  return {\n    getItem: (key: string) => (key in storage ? storage[key] : null),\n    setItem: (key: string, value: string) => (storage[key] = value || ''),\n    removeItem: (key: string) => delete storage[key],\n    clear: () => (storage = {}),\n  };\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "test-config.helper.ts": [
+                {
+                    "name": "CompilerOptions",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "Partial<literal type>",
+                    "file": "test-config.helper.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 176
+                },
+                {
+                    "name": "ConfigureFn",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "function",
+                    "file": "test-config.helper.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 177
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "",
+                        "redirectTo": "/home",
+                        "pathMatch": "full"
+                    },
+                    {
+                        "path": "home",
+                        "component": "HomeComponent"
+                    },
+                    {
+                        "path": "about",
+                        "component": "AboutComponent"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 3,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "setup-jest.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/Interfaces/NavItem.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "NavItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/about/about.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AboutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/navbar/navbar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/navitem.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "NavitemService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "test-config.helper.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "configureTests",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
