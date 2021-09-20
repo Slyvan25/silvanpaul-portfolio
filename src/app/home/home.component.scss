@@ -5,14 +5,15 @@
     height: calc(100vh - 90px);
     text-transform: uppercase;
     flex-direction: column;
+    width: 100vw;
 
     div {
       display: flex;
-      gap: 7.5rem;
+      gap: 7.5vw;
 
       a {
         fa-icon {
-          font-size: 4rem;
+          font-size: 4vw;
           color: rgba(255, 255, 255, .75);
           transition: color .25s;
         }
@@ -20,7 +21,7 @@
 
       a:hover{
         fa-icon {
-          font-size: 4rem;
+          font-size: 4vw;
           color: rgba(255, 255, 255, 1);
         }
       }
@@ -29,11 +30,11 @@
 
 
 h1 {
-    font-size: 5.875rem;
+    font-size: 5.875vw;
     background: -webkit-linear-gradient(#fff, #fff, rgba(37, 73, 230, 0),);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: 2.5rem;
+    letter-spacing: 3.5vw;
     font-weight: 100;
   }

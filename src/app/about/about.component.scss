@@ -1,19 +1,41 @@
 .about-grid {
-    display: flex;
-    flex-direction: row;
-    height: inherit;
-    height: calc(100vh - 90px);
-    color: #fff;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". .";
+  color: #fff;
 }
 
+@media screen and (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.9fr 0.1fr;
+    grid-template-areas:
+    ".";
+  }
+  .illustration {
+    margin-top: 10vh;
+    margin-left: 5vw;
+  }
+}
+@media screen and (min-width: 1024px) {
+  nav {
+    display: flex;
+  }
+  .expand-mobile-menu {
+    display: none;
+  }
+}
+
+
 .about {
-    flex: 3;
-    padding: 10rem;
+    padding: 10%;
 }
 
 .illustration {
-    flex: 2;
-    
+  height: fit-content;
     img {
         width: 30vw;
         position: absolute;

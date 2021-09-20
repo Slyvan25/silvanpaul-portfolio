@@ -1,5 +1,36 @@
-nav{
+@media screen and (max-width: 1024px) {
+  nav {
+    display: none;
+  }
+  .expand-mobile-menu {
+    display: block;
+  }
+}
+@media screen and (min-width: 1024px) {
+  nav {
     display: flex;
+  }
+  .expand-mobile-menu {
+    display: none;
+  }
+}
+
+.expand-mobile-menu {
+  position: fixed;
+  bottom: 8vh;
+  background: linear-gradient(126deg, #d125e6 0%, #2549e6 50%, #d125e6 100%);
+  padding: 1em;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  color: #fff;
+  box-shadow: 1px 1px 20px 20px rgb(255 255 255 / 8%);
+}
+
+nav{
     width: 100vw;
     height: 90px;
     justify-content: center;
