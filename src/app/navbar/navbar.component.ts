@@ -12,12 +12,14 @@ export class NavbarComponent implements OnInit {
 
   NavItems : NavItem[] = [];
   CurrentRoute : String = "";
+  menuOpen : boolean;
 
   constructor(
     private navItemService: NavitemService,
     private router: Router,
     private activatedRoute: ActivatedRoute) {
       activatedRoute.url.subscribe((url: UrlSegment[])=> (this.CurrentRoute = url[0].path))
+      this.menuOpen = false;
     }
 
   ngOnInit(): void {
@@ -29,6 +31,11 @@ export class NavbarComponent implements OnInit {
   clickedRoute(currentItem: String): void {
     console.log(currentItem);
     this.CurrentRoute = currentItem;
+  }
+
+  toggleMenu() : void {
+    this.menuOpen = this.menuOpen ? false : true;
+    console.log(this.menuOpen);
   }
 
 }

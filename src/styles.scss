@@ -22,6 +22,8 @@ body {
 .content {
     position: absolute;
     z-index: 15;
+    height: -moz-fit-content;
+    height: -webkit-fill-available;
 }
 .background {
     position: fixed;

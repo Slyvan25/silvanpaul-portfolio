@@ -1,8 +1,20 @@
-<a class="expand-mobile-menu"><fa-icon [icon]="['fas','bars']"></fa-icon></a>
+<a class="expand-mobile-menu" (click)="toggleMenu()"><fa-icon [icon]="['fas','bars']"></fa-icon></a>
 
-<!-- refactor when backend is done -->
-<nav>
+<!-- pc/tablet -->
+<nav platform="pc">
     <ul>
         <li *ngFor="let item of NavItems"><a (click)="clickedRoute(item.name)" [ngClass]="{'active': CurrentRoute === item.name}" routerLink="{{item.reference}}" >{{item.name}}</a></li>
     </ul>
+</nav>
+
+
+<!-- mobile -->
+<nav platform="mobile" [attr.active]="menuOpen">
+  <div class="background">
+    <div class="menu-logo"></div>
+    <br>
+    <ul>
+      <li *ngFor="let item of NavItems"><a (click)="clickedRoute(item.name)" [ngClass]="{'active': CurrentRoute === item.name}" routerLink="{{item.reference}}" >{{item.name}}</a></li>
+  </ul>
+  </div>
 </nav>
