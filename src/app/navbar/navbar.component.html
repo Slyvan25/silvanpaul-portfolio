@@ -7,14 +7,20 @@
     </ul>
 </nav>
 
-
 <!-- mobile -->
 <nav platform="mobile" [attr.active]="menuOpen">
   <div class="background">
-    <div class="menu-logo"></div>
-    <br>
+    <div class="menu-logo">
+      <img src="../../assets/logo.png" alt="">
+      <div class="text">Silvan Paul</div>
+    </div>
     <ul>
       <li *ngFor="let item of NavItems"><a (click)="clickedRoute(item.name)" [ngClass]="{'active': CurrentRoute === item.name}" routerLink="{{item.reference}}" >{{item.name}}</a></li>
-  </ul>
+    </ul>
+
+    <div class="close-menu-button-container">
+      <a class="close-mobile-menu" (click)="toggleMenu()"><fa-icon [icon]="['fas','times']"></fa-icon></a>
+    </div>
+
   </div>
 </nav>

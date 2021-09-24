@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { NavItem } from '../Interfaces/NavItem'
-import { NavitemService } from '../navitem.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,27 +8,20 @@ import { NavitemService } from '../navitem.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-
-  NavItems : NavItem[] = [];
+  @Input() NavItems?: NavItem[] = [];
   CurrentRoute : String = "";
   menuOpen : boolean;
 
   constructor(
-    private navItemService: NavitemService,
     private router: Router,
     private activatedRoute: ActivatedRoute) {
       activatedRoute.url.subscribe((url: UrlSegment[])=> (this.CurrentRoute = url[0].path))
       this.menuOpen = false;
     }
 
-  ngOnInit(): void {
-    this.navItemService.getNavItems().subscribe(navitem => {
-      this.NavItems = navitem
-    })
-  }
+  ngOnInit(): void {}
 
   clickedRoute(currentItem: String): void {
-    console.log(currentItem);
     this.CurrentRoute = currentItem;
   }
 
